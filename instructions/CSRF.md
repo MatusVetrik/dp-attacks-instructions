@@ -1,25 +1,32 @@
 # Cross site request forgery (CSRF)
 
-- Tento krat si predatavime utol zvany cross site request forgery (CSRF), ktory spociva v tom, ze sa posielaju requesty na server z ineho zdroja ako je nasa aplikacia. To znamena,
-   ze sa odosle rovnaky request ako by sme odoslali z aplikacie ale z akehokolvek miesta na internete. V dnesnej dobe ma vacsina prehliadacov defaultne nastaveny atribuy v hlavicke
-   requestov, ktory znaci, ze request moze byt poslany len v ramci jednej domeny alebo aj “sameorigin”.
+- Tento krát si predstavíme útok zvaný cross site request forgery (CSRF), ktorý spočíva v tom, že sa posielajú requesty na server z iného zdroja ako je naša aplikácia. To znamená,
+  že sa odošle rovnaký request ako by sme odoslali z aplikácie ale z akéhokoľvek miesta na internete. V dnešnej dobe má väčšina prehliadačov defaultne nastavené atribúty v hlavičke
+  requestu, ktorý značí, že request môže byť odslaný len v rámci jednej domény alebo aj “sameorigin”.
 
-- Utok si predstavime na systeme Damn Vulnerable Web App (DVWA), kde mozeme predviest idealny scenar na demonstraciu csrf a to zmena hesla prihlaseneho pouzivatela.
+- Útok si predstavíme na systéme Damn Vulnerable Web App (DVWA), kde môžeme predviesť ideálny scenár na demonštráciu CSRF a to zmena hesla prihláseného používateľa.
 
-- Instalacia DVWA je detailne zobrazene na tejto linke -> link. Idealnym riesenim je si naclonovat repozitar a spusti cez Docker-compose.
+- Inštalácia DVWA je detailne zobrazené na tejto linke -> link. Ideálnym riešením je si naklonovať repozitár a spustiť cez Docker-compose.
 
-- Po prihlaseni (admin:password) sa presunieme na polozku “DVWA security” v menu aplikacie a nastavime security level na “low”.
+- Po prihlásení (admin:password) sa presunieme na položku “DVWA security” v menu aplikácie a nastavíme security level na “low”.
 
-- Teraz sa mozeme presunut na polozku “csrf” v menu. Tu sa nachadza formular na zmenu hesla.
+- Teraz sa môžeme presunúť na položku “csrf” v menu. Tu sa nachádza formulár na zmenu hesla.
 
-- Zmeňe heslo a po potvrdeni si vsimnime atrubuty v url. Pri odoslani formularu sa posle request, ktory obsahuje nove heslo a kontrolu noveho hesla.
+- Zmeníme heslo a po potvrdení si všimnime atribúty v url. Pri odoslaní formuláru sa odošle request, ktorý obsahuje nové heslo a kontrolu nového hesla.
 
-- Vytvorime si skript, ktory takyto request odosle z ineho zdroju ako je aplikacia. Vytvorme html subor, ktory vyzera nasledovne.
+- Vytvoríme si skript, ktorý takýto request odošle z iného zdroju ako je aplikácia. Vytvoríme html súbor, ktorý vyzerá nasledovne. 
+   ```
+    <html>
+      <body>
+         <h1>CSRF</h1>
+         <img src="http://localhost:4280/vulnerabilities/csrf/?password_new=password1&password_conf=password1&Change=Change#"/>
+      </body>
+   </html>```
+  
+- V zdroji obrázku sa nachádza linka na rovnakú adresu ako bol request pre zmenu hesla. Heslo môžeme zmeniť na ľubovoľnú hodnotu, musí byť však rovnaká v novom hesle ako aj v kontrole hesla.
 
-- V zdroji obrazku sa nachadza linka na rovnaku adresu ako bol request pre zmenu hesla. Heslo mozeme zmenit na lubovolnu hodnotu, musi byt vsal rovnaka v novom hesle aj v kontrole.
+- Súbor si uložíme na zariadenie a otvoríme v prehliadači.
 
-- Subor si ulozme na plochu a otvorme ho v prehliadaci.
+- Request sa automaticky odoslal a keď si otvoríme vývojársku konzolu a network tak uvidíme, že prebehol úspešne. Môžeme naň rovno kliknúť v konzole a nastane redirect na csrf obrazovku DVWA.
 
-- Request sa automaticky odoslal a ked si otvorime vyvojarsku konzolu a network tal uvidime, ze prebehol uspesne. Mozeme nam rovno kliknut v konzole a nastane redirect na csrf obrazovku DVWA.
-
-- Teraz sa mozeme skusit odhlasit a prihlasit novymi prihlasovacimi udajmi aby sme si overili, ze utok naozaj prebehol uspesne.
+- Teraz si skúsime odhlásenie a opätovné prihlásenie pod novými prihlasovacími údajmi aby sme si overili, že útok naozaj prebehol úspešne.

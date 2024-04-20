@@ -1,9 +1,9 @@
 # Sensitive data exposure
 
-- Dalsim zvycajnym a beznym utokom byva sensitive data leakage. Aplikacie su casto stavane tak, ze nie su nastavene dostatocne opravnenia nato co je uzivatel dostupny vidiet.
-            Konkretne si predstavime takuto chybnu konstrukciu pri routing.
-- Tento krat si znova predstavime zranitelnost na systeme juice shop (instalacia link). Niektore systemy maju chybne zapracovanie routingu, ktore umozni prehladavat subory
-           v podradenych priecinkoch. K takejto zramitelnosti nadchadza v pripade, ze sa chybne pouzije file based routingu
-- Smaozrejme proces zistovania, ktora linka je a ktora nie je zranitelna moze byt casto zdlhavy. Kazdopadne pri spravnej detirminacii a analyzy kodu mozeme zistit,
-           ktore linky su dostupne a takto najst prave tu jednu. V konkretnom pripade pre juice shop je to linke /ftp
-- Pri otovreni linky /ftp mozeme vidiet, ze mozeme volne prehladavat subory, ktore sa tu nachadzaju. Su viditelne rozne logy a subory, ku ktorym by sme nemali mat pristup
+- Ďalším zvyčajným a bežným útokom býva sensitive dáta leakage. Aplikácie sú často stavané tak, že nie sú nastavené dostatočne oprávnenia nato čo je užívateľ dostupný vidieť.
+  Konkrétne si predstavíme takúto chybnú konštrukciu pri routing.
+- Tento krát si znova predstavíme zraniteľnosť na systéme juice shop (inštalácia link). Niektoré systémy majú chybne zapracovanie routingu, ktoré umožní prehľadávať súbory
+  v podradených priečinkoch. K takejto zraniteľnosti nadchádza v prípade, že sa chybne použije file based routingu.
+- Samozrejme proces zisťovania, ktorá linka je a ktorá nie je zraniteľná môže byť často zdĺhavý. Každopádne pri správnej detirminácii a analýzy kódu môžeme zistiť,
+  ktoré linky sú dostupné a takto nájsť práve tu jednu. V konkrétnom prípade pre juice shop je to linke /ftp.
+- Pri otvorení linky /ftp môžeme vidieť, že môžeme voľne prehľadávať súbory, ktoré sa tu nachádzajú. Sú viditeľné rôzne logy a súbory, ku ktorým by sme nemali mať prístup.

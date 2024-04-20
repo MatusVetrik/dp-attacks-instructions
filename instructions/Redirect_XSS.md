@@ -1,13 +1,13 @@
 # Redirect cross site scripting (XSS)
 
-- Predstavime si utok zvany Redirect XSS (Cross site scripting). Utok funguje na baze chybneho pouzivania linkov a redirectov na ine podstranky aplikacii.
-        Utocnik vyuzije tuto zranitelnost na premiestnenie pouzivatela na nezname stranku podla vyberu utocnika. Utok spociva zvycajne nevinnym kliknutim na link, ktory sa reprezentuje
-        ako link na aplikacie, co je v podstate pravda ale v url ma parameter, ktory obsahuje link na skodlivu stranku.
-- Pri prkeliku z hlavnej stranky utokov sa nam do parametru url nastavil atribut "redirect", ktory obsahuje hodnotu, ktora repzrezentuje absolutnu cestu kam
-        mame byt nasledne presmerovany. Tuto hodnotu vyuziva tlacidlo "Click to go home" a po kliku na tlacidlo nas presmeruje na domovsku obrazovku aplikacie.
-- Takato funkcionalita otvara moznosti utokov tykajuce sa presmerovania pouzivatela na nevhodnu stranku. Staci name do parametra vlozit link na akukolvek stranku
-        a tento cely link vratane domeny a hostu poslat obeti s tym, ze ocakvame ze obet klikne na link. Obet klikne na link a pri kliku na tlacidlo ju presmeruje na nami zvolenu stranku.
-- Url moze vyzerat nasledovne:<pre><a href="http://localhost:63342/dp-test-enviroment/src/attacksPages/redirectXss.html?redirect=https://hackertyper.net/">
-            http://localhost:63342/dp-test-enviroment/src/attacksPages/redirectXss.html?redirect=https://hackertyper.net/</a></pre> 
-- Pri kliku na url nas presmeruje na stranku na ktorej sa nachadzame ale uz s nastavenym parametrom na skodlivu stranku.
-- Po kliku na tlacidlo sme boli presmerovany na "skodlivu" stranku https://hackertyper.net.
+- Útok funguje na báze chybného používania linkov a redirectov na iné podstránky aplikácií.
+  Útočník využije túto zraniteľnosť na premiestnenie používateľa na neznáme stránku podľa výberu útočníka. Útok spočíva zvyčajne nevinným kliknutím na link, ktorý sa reprezentuje
+  ako link na aplikácie, čo je v podstate pravda ale v url má parameter, ktorý obsahuje link na škodlivú stránku.
+- Pri prekliku z hlavnej stránky útokov sa nám do parametru url nastavil atribút "redirect", ktorý obsahuje hodnotu, ktorá reprezentuje absolútnu cestu kam
+  máme byť následne presmerovaný. Túto hodnotu využíva tlačidlo "Go home" a po kliku na tlačidlo nás presmeruje na domovskú obrazovku aplikácie.
+- Takáto funkcionalita otvára možnosti útokov týkajúce sa presmerovania používateľa na nevhodnú stránku. Stačí name do parametra vložiť link na akúkoľvek stránku
+  a tento celý link vrátane domény a hostu poslať obetí s tým, že očakávame, že obeť klikne na link. Obeť klikne na link a pri kliku na tlačidlo ju presmeruje na nami zvolenu stránku.
+- Url môže vyzerať nasledovné:<pre><a href="http://localhost:63342/dp-test-enviroment/src/attacksPages/redirectXss.html?redirect=https://hackertyper.net/">
+  http://localhost:63342/dp-test-enviroment/src/attacksPages/redirectXss.html?redirect=https://hackertyper.net/</a></pre>
+- Pri kliku na url nás presmeruje na stránku na ktorej sa nachádzame ale už s nastaveným parametrom na škodlivú stránku.
+- Po kliku na tlačidlo sme boli presmerovaný na "škodlivú" stránku https://hackertyper.net.

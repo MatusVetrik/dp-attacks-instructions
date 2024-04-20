@@ -1,12 +1,12 @@
 # Sensitive data exposure 
 
-- Vseobecne nie je spravne nechavat na tvrdo napisane citlive udaje priamo v kode, v cistom javascripte uz vobec. Vo vyvojarskej konzoli je naformatovany zdrojovy kod kde si vieme vsetko dohladat.
-- Klavesou F12 si vieme orvorit vyvojarsku konzolu. Preklikneme sa na tab "Sources" a mozeme vidiet vsetky zdrojove kody, ktore boli pri nacitavani strnaky nacitane.
-- Postupne mozeme prechadzat skript po skripte a hladat citilive udaje. Jednym z nich moze byt napriklad API key, ktory je v podstate pristupovy kluc ku danej sluzbe. Nas v tomto pripade
-        bude zaujimat pristupovy kluc ku Firebase API, vdaka ktoremu budeme moct zistak akekolvek udaje ulozene vo Firebase ucte vyvojara aplikacie alebo vlastnika aplikacie.
-- Kliknime na lubovolny skript a kombinaciou klaves Ctrl + F dame vyhladavat klucove slovo v subore. Skusme vyhladat "apiKey" a postupne prechadzat jednotlive subory kym nenajdeme zhodu.
-    <pre>
-            const firebaseConfig = {
+- Všeobecne nie je správne nechávať na tvrdo napísané citlivé údaje priamo v kóde, v čistom javascripte už vôbec. Vo vývojárskej konzoli je naformátovaný zdrojový kód kde si vieme všetko dohľadať.
+- Klávesou F12 si vieme otvoriť vývojársku konzolu. Preklikneme sa na tab "Sources" a môžeme vidieť všetky zdrojové kódy, ktoré boli pri načítavaní strnaky načítané.
+- Postupne môžeme prechádzať skrípt po skripte a hľadať citlivé údaje. Jedným z nich môže byť napríklad API key, ktorý je v podstate prístupový kľúč ku danej službe. Nás v tomto prípade
+  bude zaujímať prístupový kľúč ku Firebase API, vďaka ktorému budeme môcť získať akékoľvek údaje uložené vo Firebase úcte vývojára aplikácie alebo vlastníka aplikácie.
+- Kliknime na ľubovoľný script a kombináciou kláves Ctrl + F dáme vyhľadávať kľúčové slovo v súbore. Skúsme vyhľadať "apiKey" a postupne prechádzať jednotlivé súbory kým nenájdeme zhodu.
+
+      const firebaseConfig = {
               apiKey: "AIzaSyCx_Vvo5GYYtbjFgSm0GtQv7TWb6mrAZWg",
               authDomain: "diplomovka-test-app.firebaseapp.com",
               projectId: "diplomovka-test-app",
@@ -14,6 +14,5 @@
               messagingSenderId: "548553603020",
               appId: "1:548553603020:web:6628aba4fcd24cbf19cf69",
             };
-        </pre>
-- Zhoda bola najdena v subore auth.js a nachadza sa tu cela konfiguracia pre pouzitie sluzby.
-- Teraz si mozeme vytvorit vlastny skript a zavolat lubovolne metody z API a spristupnit rozne data o zaregistrovanych pouzivateloch.
+- Zhoda bola nájdená v súbore auth.js a nachádza sa tu celá konfigurácia pre použitie služby.
+- Teraz si môžeme vytvoriť vlastný skrípt a zavolať ľubovoľné metódy z API a sprístupniť rôzne dáta o zaregistrovaných používateľoch.

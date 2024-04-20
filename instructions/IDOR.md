@@ -1,9 +1,9 @@
 # Insecure direct object reference (IDOR)
 
-- Insecure direct object reference je zranitelnost spocivajuca v tom, ked neumyselne sprostredkujeme pristup ku objektu, ktory by osoba bez dostacujucich prav nemala vidiet alebo ked je pristup k objektom zle navrhnuty
-- Idealnym prikadom pre IDOR je pripad zobrazeny v systeme juiceshop (instalacia juiceshop prostredia). Pri zobrazeni vyvojarskek konzoly a tabu “network” mozeme vidiet rozne poziadavky. Vacsina z nich su obycajne dotahovanie kaskadnych stylov, ikon a skriptov ale pri vyfiltrovani XHttp requestov mozeme vidiet tie, ktore prijamo dopytuju server o data.
-- Detailnou analyzou pri prehlidani odpovedi od servera mozeme najst zaujimave data ale nic co by sme vidiet nemohli. Az na jeden endpoint a tym je /api/users
-- Tato api vracia podla identifikacneho cisla udaje o pouzivatelovi z databazy. Zrovna takato konstrukcia byva najcastejsim miestom kde da vyskuytuje IDOR.
-- Pouzitim Burp nastroja (instalacia link) si vieme spustit interceptor, ktory odchyti kazdu poziadvku a spristupni nam detail poziadavky ako aj jej upravu.
-- Po spusteni interceptora a odchyteni spominanej poziadavky si cele telo poziadavky skopirujeme a presunieme do repetera. Repeater umoznuje opakovane odosielanie poziadvky na server, cim vieme posielat poziadavky a zaroven ju aj upravovat.
-- Skusime odoslat poziadvku s povodnym id a mozeme vidiet, ze sa nam vratili data s nasimi udajmi. Takymto sposobom mozeme skusat rozne id a ziskavat informacie o zaregistrovanych pouzivateloch a to napr. ich email, deluxeTokeny a rozne casove data o aktivite uzivatela. 
+- IDOR je zraniteľnosť spočívajúca v tom, keď neúmyselne sprostredkujeme prístup ku objektu, ktorý by osoba bez dostačujúcich práv nemala vidieť alebo keď je prístup k objektom zlé navrhnutý
+- Ideálnym príkadom pre IDOR je prípad zobrazený v systéme juiceshop (inštalácia juiceshop prostredia). Pri zobrazení vývojárskej konzoly a tabu “network” môžeme vidieť rôzne requesty. Väčšina z nich sú obyčajne doťahovanie kaskádnych štýlov, ikon a skriptov ale pri vyfiltrovaní XHttp requestov môžeme vidieť tie, ktoré prijamo dopytujú server o dáta.
+- Detailnou analýzou pri prehliadaní odpovedí od servera môžeme nájsť zaujímavé dáta ale nič čo by sme vidieť nemohli. Až na jeden endpoint a tým je /api/users
+- Táto API vracia podľa identifikačného čísla údaje o používateľovi z databázy. Zrovna takáto konštrukcia býva najčastejším miestom kde dá vyskuytuje IDOR.
+- Použitím Burp nástroja (inštalácia link) si vieme spustiť interceptor, ktorý odchytí každý request a sprístupní nám detail requestu ako aj jeho úpravu.
+- Po spustení interceptora a odchytení spomínaného requestu si celé telo re skopírujeme a presunieme do repetera. Repeater umožňuje opakovane odosielanie requestu na server, čím vieme posielať requesty a zároveň ju aj upravovať.
+- Skúsime odoslať request s pôvodným id a môžeme vidieť, že sa nám vrátili dáta s našimi údajmi. Takýmto spôsobom môžeme skúšať rôzne id a získavať informácie o zaregistrovaných používateľoch a to napr. ich email, deluxeTokeny a rôzne časové dáta o aktivite užívateľa. 

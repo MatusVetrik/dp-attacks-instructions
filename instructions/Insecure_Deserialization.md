@@ -1,11 +1,10 @@
 # Insecure derialization
 
-- Insecure deserialization je …
-- Tuto zranitelnost vieme vyuzit v ramci testovacieho prostredia (instalacia link).
-- Utok spociva v tom, ze upravime ukladany bearer token, ktory obsahuje okrem udajov uzivatela aj jemu prisluchajuce roly.
-- Po registraciii a prihlaseni sa do systemu si po otovreni vyvojarskej konzoly a tabu “application” mozeme vsimnut, ze sa do local storageu uklada token. Standartom pri takomto type tokenu je, ze je kodovany klucom base64.
-- Token si skopirujeme a skusime ho dekodovat v softwarey na enkodovanie a dekodovanie base64 retazcov (link)
-- Po dekodovoani tokenu mozeme vidiet, ze bola presne tento kluc pouzity na zakodovanie a teraz mame zretazeny json s udajmi o pouzivatelovi, teda o nas.
-- Teraz si pridajme do polia “roles” dalsiu rolu a tou je rola admin
-- Retazec znova zakodujme base64 klucom a vvlozme ho do local storageu aplikacie
-- Po ulozeni tokenu a kliknutim na email v navigacnom bare sa nam otvori nas profil kde uz mozeme vidiet aj rolu admin. Takymto sposobom sme si privlastnili aspon cast adminskych opravneni.
+- Zraniteľnosť vieme využiť v rámci testovacieho prostredia (inštalácia link).
+- Útok spočíva v tom, že upravíme ukladaný bearer token, ktorý obsahuje okrem údajov užívateľa aj jemu prislúchajúce roly.
+- Po registrácii a prihlásení sa do systému si po otvorení vývojárskej konzoly a tabu “application” môžeme všimnúť, že sa do local storageu ukladá token. Štandartom pri takomto type tokenu je, že je kódovaný kľúčom base64.
+- Token si skopírujeme a skúsime ho dekódovať v softwarey na enkódovanie a dekódovanie base64 reťazcov (link)
+- Po dekódovaní tokenu môžeme vidieť, že bola presne tento kľúč použitý na zakódovanie a teraz máme zreťazený json s údajmi o používateľovi, teda o nás.
+- Teraz si pridajme do polia “roles” ďalšiu rolu a tou je rola admin
+- Reťazec znova zakódujme base64 kľúčom a vložíme ho do local storageu aplikácie
+- Po uložení tokenu a kliknutím na email v navigačnom bare sa nám otvorí nás profil kde už môžeme vidieť aj rolu admin. Takýmto spôsobom sme si privlastnili aspoň časť adminských oprávnení.
