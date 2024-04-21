@@ -1,6 +1,7 @@
 # Reflected cross site scripting (XSS)
 
-- Útok prevedieme pomocou systému juice-shop (inštalácia https://github.com/juice-shop/juice-shop#from-sources).
+### Prostredie: Juice-Shop - https://github.com/juice-shop/juice-shop#from-sources
+
 - Po spustení aplikácie a zaregistrovaní sa prejdeme do sekcii v menu "Objednávky a platby".
 - V url sa nám zobrazujú objednávky podľa id, kde na obrazovke vyhľadanej objednávky sa taktiež zobrazuje id objednávky.
 - Tento design pattern má potencionálnu zraniteľnosť a to, že vpisujeme neoverený vstup priamo do DOM stránky.

@@ -1,5 +1,7 @@
 # Insecure derialization
 
+### Prostredie: Dp-Test-Enviroment - https://github.com/MatusVetrik/dp-test-enviroment
+
 - Zraniteľnosť vieme využiť v rámci testovacieho prostredia (inštalácia link).
 - Útok spočíva v tom, že upravíme ukladaný bearer token, ktorý obsahuje okrem údajov užívateľa aj jemu prislúchajúce roly.
 - Po registrácii a prihlásení sa do systému si po otvorení vývojárskej konzoly a tabu “application” môžeme všimnúť, že sa do local storageu ukladá token. Štandartom pri takomto type tokenu je, že je kódovaný kľúčom base64.

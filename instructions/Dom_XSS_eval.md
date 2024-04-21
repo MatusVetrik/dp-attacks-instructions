@@ -1,5 +1,7 @@
 # Document object model cross site scripting (DOM XSS)
 
+### Prostredie: Dp-Test-Enviroment - https://github.com/MatusVetrik/dp-test-enviroment
+
 - V tomto útoku využijeme zraniteľnú funkciu eval(), ktorá vyhodnotí akúkoľvek hodnotu, ktoré je vložená ako argument. Vie vypočítavať rôzne rovnice, preto je ideálnym riešením pre primitívnu kalkulačku.
 - Každopádne tým, že vyhodnotí akúkoľvek hodnotu tak vyhodnotí aj akýkoľvek škodlivý kód, ktorý ako argument vložíme.
 - Input s textom "Enter equation..." vyhodnocuje práve funkcia eval a predpokladáme, že na tomto mieste vzniká zraniteľnosť.

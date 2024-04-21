@@ -1,7 +1,9 @@
 # Insecure direct object reference (IDOR)
 
+### Prostredie: Juice-Shop - https://github.com/juice-shop/juice-shop#from-sources
+
 - IDOR je zraniteľnosť spočívajúca v tom, keď neúmyselne sprostredkujeme prístup ku objektu, ktorý by osoba bez dostačujúcich práv nemala vidieť alebo keď je prístup k objektom zlé navrhnutý
-- Ideálnym príkadom pre IDOR je prípad zobrazený v systéme juiceshop (inštalácia juiceshop prostredia). Pri zobrazení vývojárskej konzoly a tabu “network” môžeme vidieť rôzne requesty. Väčšina z nich sú obyčajne doťahovanie kaskádnych štýlov, ikon a skriptov ale pri vyfiltrovaní XHttp requestov môžeme vidieť tie, ktoré prijamo dopytujú server o dáta.
+- Ideálnym príkadom pre IDOR je prípad zobrazený v systéme juiceshop. Pri zobrazení vývojárskej konzoly a tabu “network” môžeme vidieť rôzne requesty. Väčšina z nich sú obyčajne doťahovanie kaskádnych štýlov, ikon a skriptov ale pri vyfiltrovaní XHttp requestov môžeme vidieť tie, ktoré prijamo dopytujú server o dáta.
 - Detailnou analýzou pri prehliadaní odpovedí od servera môžeme nájsť zaujímavé dáta ale nič čo by sme vidieť nemohli. Až na jeden endpoint a tým je /api/users
 - Táto API vracia podľa identifikačného čísla údaje o používateľovi z databázy. Zrovna takáto konštrukcia býva najčastejším miestom kde dá vyskuytuje IDOR.
 - Použitím Burp nástroja (inštalácia link) si vieme spustiť interceptor, ktorý odchytí každý request a sprístupní nám detail requestu ako aj jeho úpravu.

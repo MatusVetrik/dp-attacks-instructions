@@ -1,6 +1,7 @@
 # Stored cross site scripting (XSS)
 
-- Útok vykonáme na prostredí juice-shop (inštalácia link)
+### Prostredie: Juice-Shop - https://github.com/juice-shop/juice-shop#from-sources
+
 - Stored cross site scripting (XSS) je nazývaný stored kvôli tomu, že škodlivý kód je ukladaný v databáze aplikácii a je spustený každý krát keď užívateľ navštívy danú stránku. Ukážeme si krátku ukážku na Juice shop aplikácií.
 - Pre tento typ útoku budeme potrebovať taktiež nástroj, ktorý bude zachytávať HTTP požiadavky na server, čo nám umožňuje vidieť a upraviť každú jednu požiadavku. Zaužívaným nástrojom pre tieto potreby je PortSwigger.
 - V Juice shop aplikácií máme samostatnú obrazovku, ktorá zobrazuje poslednú IP adresu z ktorej sme boli prihlásený. Táto posledná IP adresa sa získava z databázy. Pri odhlasovaní z účtu vieme odchytiť požiadavku na odhlásenie

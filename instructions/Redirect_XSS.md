@@ -1,5 +1,7 @@
 # Redirect cross site scripting (XSS)
 
+### Prostredie: Dp-Test-Enviroment - https://github.com/MatusVetrik/dp-test-enviroment
+
 - Útok funguje na báze chybného používania linkov a redirectov na iné podstránky aplikácií.
   Útočník využije túto zraniteľnosť na premiestnenie používateľa na neznáme stránku podľa výberu útočníka. Útok spočíva zvyčajne nevinným kliknutím na link, ktorý sa reprezentuje
   ako link na aplikácie, čo je v podstate pravda ale v url má parameter, ktorý obsahuje link na škodlivú stránku.

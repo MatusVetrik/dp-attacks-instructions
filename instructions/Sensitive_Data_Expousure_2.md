@@ -1,5 +1,7 @@
 # Sensitive data exposure 
 
+### Prostredie: Dp-Test-Enviroment - https://github.com/MatusVetrik/dp-test-enviroment
+
 - Všeobecne nie je správne nechávať na tvrdo napísané citlivé údaje priamo v kóde, v čistom javascripte už vôbec. Vo vývojárskej konzoli je naformátovaný zdrojový kód kde si vieme všetko dohľadať.
 - Klávesou F12 si vieme otvoriť vývojársku konzolu. Preklikneme sa na tab "Sources" a môžeme vidieť všetky zdrojové kódy, ktoré boli pri načítavaní strnaky načítané.
 - Postupne môžeme prechádzať skrípt po skripte a hľadať citlivé údaje. Jedným z nich môže byť napríklad API key, ktorý je v podstate prístupový kľúč ku danej službe. Nás v tomto prípade

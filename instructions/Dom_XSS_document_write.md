@@ -1,5 +1,7 @@
 # Document objcet model cross site scripting (DOM XSS)
 
+### Prostredie: Dp-Test-Enviroment - https://github.com/MatusVetrik/dp-test-enviroment
+
 - Teraz si predstavíme DOM XSS na príklade vygenerovania exportu objednávky do novéhe tabu prehliadača pomocou metódy document.write().
 - Metóda document.write() prepisuje celú kostru stránky a generuje novú pomocou argumentu vloženého do metódy. Týmto spôsobom sa dajú jednoducho a automatizovane generovať nové stránky alebo upravovať už existujúce.
 - Problém nastáva, keď sa do argumentu vloží vrátane rôznych tagov aj škodlivý kód. Škodlivý kód je priamo vložený do tela stránky.

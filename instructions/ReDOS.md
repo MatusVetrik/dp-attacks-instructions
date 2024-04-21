@@ -1,5 +1,7 @@
 # Regex denial of service (ReDOS)
 
+### Prostredie: Dp-Test-Enviroment - https://github.com/MatusVetrik/dp-test-enviroment
+
 - Pri tomto útoku si ukážeme DOS útok použitím zraniteľnej funkcionality regex výrokov
 - V testovacom prostredí máme zobrazený input pre email. Vložený email bude zvalidovaný a regex výrok vyhodnotí, či ide o validný alebo nesprávne zostavený email
 - Pri náhľade zdrojového kódu môžeme vidieť, že regex reťazec je veľmi dlhý a komplexný, z čoho vyplýva, že jeho výpočet môže v istých prípadoch trvať dlhšie

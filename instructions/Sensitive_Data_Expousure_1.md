@@ -1,8 +1,10 @@
 # Sensitive data exposure
 
+### Prostredie: Juice-Shop - https://github.com/juice-shop/juice-shop#from-sources
+
 - Ďalším zvyčajným a bežným útokom býva sensitive dáta leakage. Aplikácie sú často stavané tak, že nie sú nastavené dostatočne oprávnenia nato čo je užívateľ dostupný vidieť.
   Konkrétne si predstavíme takúto chybnú konštrukciu pri routing.
-- Tento krát si znova predstavíme zraniteľnosť na systéme juice shop (inštalácia link). Niektoré systémy majú chybne zapracovanie routingu, ktoré umožní prehľadávať súbory
+- Niektoré systémy majú chybne zapracovanie routingu, ktoré umožní prehľadávať súbory
   v podradených priečinkoch. K takejto zraniteľnosti nadchádza v prípade, že sa chybne použije file based routingu.
 - Samozrejme proces zisťovania, ktorá linka je a ktorá nie je zraniteľná môže byť často zdĺhavý. Každopádne pri správnej detirminácii a analýzy kódu môžeme zistiť,
   ktoré linky sú dostupné a takto nájsť práve tu jednu. V konkrétnom prípade pre juice shop je to linke /ftp.

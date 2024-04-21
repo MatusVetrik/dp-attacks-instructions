@@ -1,5 +1,7 @@
 # Cross site request forgery (CSRF)
 
+### Prostredie: DVWA - https://github.com/digininja/DVWA  
+
 - Tento krát si predstavíme útok zvaný cross site request forgery (CSRF), ktorý spočíva v tom, že sa posielajú requesty na server z iného zdroja ako je naša aplikácia. To znamená,
   že sa odošle rovnaký request ako by sme odoslali z aplikácie ale z akéhokoľvek miesta na internete. V dnešnej dobe má väčšina prehliadačov defaultne nastavené atribúty v hlavičke
   requestu, ktorý značí, že request môže byť odslaný len v rámci jednej domény alebo aj “sameorigin”.
