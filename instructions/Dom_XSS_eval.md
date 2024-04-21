@@ -90,3 +90,5 @@
         };
 - Tento kód uloží, respektíve prepíše dáta o prihlásenom používateľovi. Objekt "dáta" nahradíme novým objektom, ktorý nám došiel na Pipedream. Zo skopírovaného objektu musíme zo všetkých atribútov odstrániť úvodzovky a nechať len pri hodnotách.
 - Po kliknuti klávesy "Enter" sme si do prehliadača uložili prihlasovacie údaje iného používateľa a teraz sme prihlásený pod jeho prihalsovacimi údajmi.
+
+- Video návod sa nachádza v priečinku "video_instructions": /video_instructions/dom-xss-eval.mp4 (https://github.com/MatusVetrik/dp-attacks-instructions/blob/main/video_instructions/dom-xss-eval.mp4)

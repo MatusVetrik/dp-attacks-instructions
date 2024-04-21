@@ -10,3 +10,5 @@
 - Teraz si pridajme do polia “roles” ďalšiu rolu a tou je rola admin
 - Reťazec znova zakódujme base64 kľúčom a vložíme ho do local storageu aplikácie
 - Po uložení tokenu a kliknutím na email v navigačnom bare sa nám otvorí nás profil kde už môžeme vidieť aj rolu admin. Takýmto spôsobom sme si privlastnili aspoň časť adminských oprávnení.
+
+- Video návod sa nachádza v priečinku "video_instructions": /video_instructions/insecure-deserialization.mp4 (https://github.com/MatusVetrik/dp-attacks-instructions/blob/main/video_instructions/insecure-deserialization.mp4)

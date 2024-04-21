@@ -32,3 +32,5 @@
 - Request sa automaticky odoslal a keď si otvoríme vývojársku konzolu a network tak uvidíme, že prebehol úspešne. Môžeme naň rovno kliknúť v konzole a nastane redirect na csrf obrazovku DVWA.
 
 - Teraz si skúsime odhlásenie a opätovné prihlásenie pod novými prihlasovacími údajmi aby sme si overili, že útok naozaj prebehol úspešne.
+
+- Video návod sa nachádza v priečinku "video_instructions": /video_instructions/csrf.mp4 (https://github.com/MatusVetrik/dp-attacks-instructions/blob/main/video_instructions/csrf.mp4)

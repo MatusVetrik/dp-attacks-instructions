@@ -9,3 +9,5 @@
 - Do emailového vstupu môžeme postupne zapisovať dlhšie a dlhšie hodnoty, čím spozorujeme, že výpočty prebiehajú výrazne dlhšie každým pokusom
 - Finálne vložíme do inputu reťazec dĺžky najmenej 30 znakov
 - Ako môžeme vidieť aplikácia nereaguje, refresh stránky nefunguje. Aplikovali sme úspešný reDOS útok.
+
+- Video návod sa nachádza v priečinku "video_instructions": /video_instructions/redos.mp4 (https://github.com/MatusVetrik/dp-attacks-instructions/blob/main/video_instructions/redos.mp4)

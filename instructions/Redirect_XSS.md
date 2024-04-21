@@ -13,3 +13,5 @@
   http://localhost:63342/dp-test-enviroment/src/attacksPages/redirectXss.html?redirect=https://hackertyper.net/</a></pre>
 - Pri kliku na url nás presmeruje na stránku na ktorej sa nachádzame ale už s nastaveným parametrom na škodlivú stránku.
 - Po kliku na tlačidlo sme boli presmerovaný na "škodlivú" stránku https://hackertyper.net.
+
+- Video návod sa nachádza v priečinku "video_instructions": /video_instructions/redirect-xss.mp4 (https://github.com/MatusVetrik/dp-attacks-instructions/blob/main/video_instructions/redirect-xss.mp4)

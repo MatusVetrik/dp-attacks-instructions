@@ -102,3 +102,5 @@
     </script>
 
 - Teraz môžeme refreshnut stránku a ako môžeme vidieť v hlavičke stránky alebo po kliku na profil, že sme prihlásený pod iným účtom.
+
+- Video návod sa nachádza v priečinku "video_instructions": /video_instructions/dom-xss-write.mp4 (https://github.com/MatusVetrik/dp-attacks-instructions/blob/main/video_instructions/dom-xss-write.mp4)

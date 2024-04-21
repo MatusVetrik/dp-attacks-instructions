@@ -18,3 +18,5 @@
             };
 - Zhoda bola nájdená v súbore auth.js a nachádza sa tu celá konfigurácia pre použitie služby.
 - Teraz si môžeme vytvoriť vlastný skrípt a zavolať ľubovoľné metódy z API a sprístupniť rôzne dáta o zaregistrovaných používateľoch.
+
+- Video návod sa nachádza v priečinku "video_instructions": /video_instructions/sensitive-data-exposure-apikey.mp4 (https://github.com/MatusVetrik/dp-attacks-instructions/blob/main/video_instructions/sensitive-data-exposure-apikey.mp4)

@@ -9,3 +9,5 @@
 - Samozrejme proces zisťovania, ktorá linka je a ktorá nie je zraniteľná môže byť často zdĺhavý. Každopádne pri správnej detirminácii a analýzy kódu môžeme zistiť,
   ktoré linky sú dostupné a takto nájsť práve tu jednu. V konkrétnom prípade pre juice shop je to linke /ftp.
 - Pri otvorení linky /ftp môžeme vidieť, že môžeme voľne prehľadávať súbory, ktoré sa tu nachádzajú. Sú viditeľné rôzne logy a súbory, ku ktorým by sme nemali mať prístup.
+
+- Video návod sa nachádza v priečinku "video_instructions": /video_instructions/sensitive-data-exposure-routes.mp4 (https://github.com/MatusVetrik/dp-attacks-instructions/blob/main/video_instructions/sensitive-data-exposure-routes.mp4)
