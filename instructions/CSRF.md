@@ -2,19 +2,18 @@
 
 ### Prostredie: DVWA - https://github.com/digininja/DVWA  
 
-- Cross Site Request Forgery (CSRF) spočíva v posielaní požiadavok na server z iného zdroja ako je naša aplikácia. To znamená,
-  že sa odošle rovnaká požiadavka ako by sme odoslali z aplikácie ale z akéhokoľvek miesta na internete. V dnešnej dobe má väčšina prehliadačov defaultne nastavený atribút v hlavičke
-  požiadavky, ktorý značí, že request môže byť odoslaný len v rámci jednej domény alebo aj “sameorigin”.
+- Cross Site Request Forgery (CSRF) spočíva v posielaní požiadaviek na server z iného zdroja ako je naša aplikácia.  V dnešnej dobe má väčšina prehliadačov defaultne nastavený atribút v hlavičke
+  požiadavky, ktorý značí, že požiadavka môže byť odoslanýálen v rámci jednej domény alebo aj “sameorigin”. V prípade, že takáto ochrana nie je zavedená, aplikácia je zraniteľná voči CSRF.
 
 - Útok si predstavíme na systéme Damn Vulnerable Web App (DVWA), kde môžeme predviesť ideálny scenár na demonštráciu CSRF a to zmenou hesla prihláseného používateľa.
 
-- Po prihlásení (admin:password) sa presunieme na položku “DVWA security” v menu aplikácie a nastavíme security level na “low”.
+- Po prihlásení (admin:password) sa presunieme na položku “DVWA security” v menu aplikácii a nastavíme security level na “low”.
 
 - Teraz sa môžeme presunúť na položku “csrf” v menu. Tu sa nachádza formulár na zmenu hesla.
 
-- Zmeníme heslo a po potvrdení si všimnime atribúty v url. Pri odoslaní formuláru sa odošle po6iadavka, ktor8 obsahuje nové heslo a kontrolu nového hesla.
+- Zmeníme heslo a po potvrdení môžeme vidieť atribúty v url. Pri odoslaní formuláru sa odošle požiadavka, ktorá obsahuje nové heslo a kontrolu nového hesla.
 
-- Vytvoríme si skript, ktorý po6iadavku odošle z iného zdroju ako je aplikácia. Vytvoríme HTML súbor, ktorý vyzerá nasledovne:
+- Vytvoríme kód, ktorý požiadavku odošle z iného zdroju ako je aplikácia. Vytvoríme HTML súbor, ktorý vyzerá nasledovne:
    ```
     <html>
       <body>
@@ -27,8 +26,7 @@
 
 - Súbor si uložíme na zariadenie a otvoríme v prehliadači.
 
-- POžiadavka sa automaticky odoslala a keď otvoríme položku "network" vo vývojárskej konzole tak uvidíme, že požiadavka prebehka úspešne. Kliknutím na požiadavku vo vývojarskej konzole sa 
-  sa presunieme na obrazovku zmenu hesla v DVWA.
+- Požiadavka sa automaticky odoslala, keď otvoríme položku "network" vo vývojárskej konzole tak vidíme, že požiadavka prebehla úspešne. Kliknutím na požiadavku sa presunieme na obrazovku zmenu hesla v DVWA.
 
 - Teraz skúsime odhlásenie a opätovné prihlásenie pod novými prihlasovacími údajmi aby sme si overili, že útok naozaj prebehol úspešne.
 

