@@ -2,7 +2,7 @@
 
 ### Prostredie: Juice-Shop - https://github.com/juice-shop/juice-shop#from-sources
 
-- Reflektovaný XSS využíva pridávanie neovereného vstupu priamo do tela stránky čím umožnuje spustenie kódu útočníka.
+- Reflektovaný XSS využíva odosielanie neovereného vstupu pomocou HTTP požiadavky. V rámci jednej požiadavky sa následne vracia neoverený vstup a vkladá sa priamo do tela stránky, čím vzniká zraniteľnosť.  
 - Po spustení aplikácie a zaregistrovaní sa prejdeme do sekcii v menu "Objednávky a platby".
 - V url sa nám zobrazujú objednávky podľa parametru id. V detaile objednávky vidíme informácie o stave a id objednávky vložené z url parametru.
 - Takáto konštrukcia má potencionálnu zraniteľnosť a to, že vpisujeme neoverený vstup priamo do DOM stránky.
